@@ -14,9 +14,9 @@ Aplicação Python que realiza web scraping para extrair cotações do dólar em
 
 ## 📦 Dependências
 
-- **Selenium**: Automação do navegador para web scraping
-- **WebDriver Chrome**: Necessário para controlar o navegador Chrome
-- **Python 3.6+**: Versão mínima do Python
+- **Python 3.8+** (recomendado 3.10+)
+- **Selenium** (4.6+ recomendado) para automação do navegador
+- **Google Chrome** instalado
 
 ### Instalação de Dependências
 
@@ -31,14 +31,15 @@ pip install selenium
 
 ## 🖥️ Como Usar
 
-1. Certifique-se de ter o Chrome instalado e o ChromeDriver no PATH
+1. Certifique-se de ter o Chrome instalado e o ChromeDriver no PATH (ou use Selenium 4.6+ para que o Selenium Manager faça o download automático).
 2. Execute o script:
 
 ```bash
 python app.py
 ```
 
-3. O programa abrirá automaticamente o navegador, coletará os dados e exibirá no terminal
+3. O programa abrirá automaticamente o navegador, coletará os dados e exibirá no terminal.
+4. Quando terminar, feche a janela do Chrome (o script não fecha o navegador automaticamente).
 
 ## 📊 Dados Coletados
 

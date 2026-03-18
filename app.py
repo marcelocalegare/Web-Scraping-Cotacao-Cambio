@@ -14,8 +14,9 @@ data_hora_formatada = data_hora_atual.strftime('%d/%m/%Y %H:%M')
 def limpar_terminal():
     system('cls' if name == 'nt' else 'clear')
 
+
 # Mensagem indicando para o usuario que a aplicação irá iniciar o site desejado
-print("Iniciando o site para Web Scraping")
+print("Acessando o site para Web Scraping")
 
 # Inicia o navegador e acessa a pagina para extração de dados
 driver = webdriver.Chrome()
@@ -30,7 +31,7 @@ for i in range(20):
 
 # Coleta de dados
 # Localiza o container da cotação de compra do dólar e extrai o valor interno (evitando conflito de classes repetidas)
-container_dolar_pay = driver.find_element(By.CLASS_NAME, "chart-info-pay") 
+container_dolar_pay = driver.find_element(By.CLASS_NAME, "chart-info-pay")
 cotacao_dolar_pay = container_dolar_pay.find_element(
     By.CLASS_NAME, "chart-info-val").text
 
@@ -52,7 +53,7 @@ limpar_terminal()
 
 # Exibe os dados coletados junto da data e hora da coleta
 print(
-    f"""DADOS COLETADOS
+    f"""=-=-=-=-=-=DADOS COLETADOS=-=-=-=-=-=
 DATA DA COLETA: {data_hora_formatada}
 
 VALOR ATUAL DE COMPRA DO DOLAR: {cotacao_dolar_pay}
