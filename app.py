@@ -25,26 +25,26 @@ driver.get("https://economia.uol.com.br/cotacoes/cambio/")
 # Exibe animação de carregamento no terminal
 spinner = ['|', '/', '-', '\\']
 for i in range(20):
-    sys.stdout.write(f"\rCarregando Dados {spinner[i % len(spinner)]}")
+    sys.stdout.write(f"\rColetando Dados {spinner[i % len(spinner)]}")
     sys.stdout.flush()
     sleep(0.2)
 
 # Coleta de dados
-# Localiza o container da cotação de compra do dólar e extrai o valor interno (evitando conflito de classes repetidas)
-container_dolar_pay = driver.find_element(By.CLASS_NAME, "chart-info-pay")
+# Localiza o container e extrai o valor interno (evitando conflito de classes repetidas)
+container_dolar_pay = driver.find_element(By.CLASS_NAME, "chart-info-pay") # Coletando o valor atual de compra do dolar
 cotacao_dolar_pay = container_dolar_pay.find_element(
     By.CLASS_NAME, "chart-info-val").text
 
-container_dolar_buy = driver.find_element(By.CLASS_NAME, "chart-info-buy")
+container_dolar_buy = driver.find_element(By.CLASS_NAME, "chart-info-buy") # Coletando o valor atual de venda do dolar
 cotacao_dolar_buy = container_dolar_buy.find_element(
     By.CLASS_NAME, "chart-info-val").text
 
-container_dolar_max = driver.find_element(By.CLASS_NAME, "chart-info-max")
+container_dolar_max = driver.find_element(By.CLASS_NAME, "chart-info-max") # Coletando o valor maximo do dolar no dia 
 cotacao_dolar_max = container_dolar_max.find_element(
     By.CLASS_NAME, "chart-info-val").text
 
 
-container_dolar_min = driver.find_element(By.CLASS_NAME, "chart-info-min")
+container_dolar_min = driver.find_element(By.CLASS_NAME, "chart-info-min") # Coletando o valor minimo do dolar no dia
 cotacao_dolar_min = container_dolar_min.find_element(
     By.CLASS_NAME, "chart-info-val").text
 
